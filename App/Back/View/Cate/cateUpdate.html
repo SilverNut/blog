@@ -1,0 +1,93 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <{include file="../Public/style.html"}>
+    <script >
+        $(function(){
+            $("#nowtime").css({color:'red'});
+            window.setInterval('ShowTime()',1000);
+        });
+        function ShowTime(){
+            var t = new Date();
+            var str = t.getFullYear() + '年';
+            str += t.getMonth() + '月';
+            str += t.getDate() + '日 ';
+            str += t.getHours() + ':';
+            str += t.getMinutes() + ':';
+            str += t.getSeconds() + '';
+            $("#nowtime").html(str);
+        }
+    </script>
+</head>
+<body>
+
+
+
+  <!--页面头部-->
+   <{include file= '../Public/head.html'}>
+
+
+<div class="container clearfix">
+    
+    <!--左侧菜单栏-->
+   <{include file= '../Public/left.html'}>
+    <!--左侧菜单栏 begin-->
+    
+    <!--右侧主操作区-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i>
+                <a href="?p=back">首页</a>
+                <span class="crumb-step">&gt;</span>
+                <span class="crumb-name">分类管理</span>
+                <span class="crumb-step">&gt;</span>
+                <span class="crumb-name">修改分类</span>
+            </div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="?p=back&c=Cate&a=update&cate_id=<{$info.cate_id}>" method="post" id="myform" >
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th><i class="require-red">*</i>分类名称：</th>
+                                <td>
+                                    <input class="common-text required" id="title" name="category_name" size="50" value="<{$info.cate_name}>" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>分类描述：</th>
+                                <td>
+                                    <textarea name="category_desc" class="common-textarea" cols="60" rows="4"><{$info.cate_description}></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>是否显示：</th>
+                                <td>
+                                    <input  name="is_show"  type="radio" value="0"  <{if $info.is_show eq '0'}> checked="checked" <{/if}>  >显示
+                                    <input  name="is_show"  type="radio" value="1" <{if $info.is_show eq '1'}> checked="checked" <{/if}> >不显示
+                                </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                                    <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    <!--/右侧主操作区-->
+</div>
+
+</body>
+</html>
