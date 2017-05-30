@@ -13,18 +13,19 @@
 class CateController extends BackController{
 	
 	protected $cateModel;
-	
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->cateModel = new CateModel();
+	}
+
 	public function index(){
 
 		$m= new CateModel();
 		$info=$m->getAll();
 		$this->assign('info',$info);
 		$this->display('cateList.html');
-	}
-
-	public function __construct(){
-		parent::__construct(); 
-		$this->cateModel=new CateModel();
 	}
 
 	public function add(){
@@ -49,6 +50,7 @@ class CateController extends BackController{
 	public function batchDel(){
 		$del_cate_id=isset($_POST['id']) ? $_POST['id'] : null;
 		if (!empty($del_cate_id)) {
+
 			$res=$this->cateModel->delRowsById($del_cate_id);
 			if ($res) {
 				$this->mysuccess('批量删除成功','/index.php?p=back&c=Cate&a=index',3);

@@ -1,0 +1,116 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <{include file= '../Public/style.html'}>
+    <script >
+        $(function(){
+            $("#nowtime").css({color:'red'});
+            window.setInterval('ShowTime()',1000);
+        });
+        function ShowTime(){
+            var t = new Date();
+            var str = t.getFullYear() + '年';
+            str += t.getMonth() + '月';
+            str += t.getDate() + '日 ';
+            str += t.getHours() + ':';
+            str += t.getMinutes() + ':';
+            str += t.getSeconds() + '';
+            $("#nowtime").html(str);
+        }
+    </script>
+
+
+</head>
+<body>
+
+
+<!--header-->
+<{include file = '../Public/head.html'}>
+<div class="container clearfix">
+    
+    <!--左侧菜单栏-->
+    <{include file = '../Public/left.html'}>
+    <!--左侧菜单栏 begin-->
+
+
+    <!--右侧主操作区-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i>
+                <a href="?p=back">首页</a>
+                <span class="crumb-step">&gt;</span>
+                <span class="crumb-name">分类管理</span>
+            </div>
+        </div>
+        <div class="search-wrap">
+            <div class="search-content">
+                <form action="" method="post">
+                    <table class="search-tab">
+                        <tr>
+                            <th width="70">关键字:</th>
+                            <td><input class="common-text" placeholder="关键字" name="keywords" value="" id="" type="text"></td>
+                            <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="result-wrap">
+            <form name="myform" id="myform" method="post" action="?p=back&c=Blog&a=batchDel">
+                <div class="result-title">
+                    <div class="result-list">
+                        <a href="?p=back&c=Blog&a=Add"><i class="icon-font"></i>添加文章</a>
+                        <a id="batchDel" onclick="batchDelSubmit()" onmouseover="changeCursor()"><i
+                                class="icon-font"></i>批量删除</a>
+                    </div>
+                </div>
+                <input class="allChoose" name="allChoose" type="radio" id="input_All" onclick="checkAll()">全选
+                <input class="allChoose" name="allChoose" type="radio" id="input_uncheck" onclick="uncheck()">反选
+                <input class="allChoose" name="allChoose" type="radio" id="input_othercheck" onclick="otherCheck()">不选
+                <div class="result-content" id="divcheck">
+                    <table class="result-tab" width="100%">
+                        <tr>
+                            <th class="tc" width="5%">
+                                <input class="allChoose" name="" type="checkbox" onclick="checkAll()">
+                            </th>
+                            <th>标题</th>
+                            <th>所属分类</th>
+                            <th>作者</th>
+                            <th>发布时间</th>
+                            <th>点击数</th>
+                            <th>操作</th>
+                        </tr>
+                        <{foreach $info as $k=>$v}>
+                        <tr>
+                            <td class="tc">
+                                <input name="id[<{$v.blog_id}>]" value="1" type="checkbox">
+                            </td>
+                            <td><{$v.blog_title}></td>
+                            <td><{$v.cate_name}></td>
+                            <td><{$v.author_id}></td>
+                            <td><{$v.blogtime}></td>
+                            <td><{$v.hits}></td>
+                            <td>
+                                <a class="link-update" href="?p=back&c=Blog&a=Edit&blog_id=<{$v.blog_id}>">修改</a>
+                                <a class="link-del"
+                                   href="javascript:if(confirm('确定删除该记录么么?')) window.location.href='?p=back&c=Blog&a=Delete&blog_id=<{$v.blog_id}>'">删除</a>
+                            </td>
+                        </tr>
+                        <{/foreach}>
+
+                    </table>
+                    <div class="list-page"> 2 条 1/1 页</div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <!--/右侧主操作区-->
+</div>
+
+</body>
+</html>

@@ -21,80 +21,8 @@
             $("#nowtime").html(str);
         }
     </script>
-    <script type="text/javascript">
-        /* window.onload=function(){
-                var CheckAll=document.getElementById('input_All');
-                var UnCheck=document.getElementById('input_uncheck');
-                var OtherCheck=document.getElementById('input_othercheck');
-                var div=document.getElementById('result-content');
-                var    CheckBox=div.getElementsByTagName('input');
-                CheckAll.onclick=function(){
-                        for(i=0;i<CheckBox.length;i++){
-                                CheckBox[i].checked=true;
-                            };
-                    };
-                UnCheck.onclick=function(){
-                        for(i=0;i<CheckBox.length;i++){
-                                CheckBox[i].checked=false;
-                            };
-                    };
-                Othercheck.onclick=function(){
-                        for(i=0;i<CheckBox.length;i++){
-                                if(CheckBox[i].checked==true){
-                                        CheckBox[i].checked=false;
-                                    }
-                                else{
-                                    CheckBox[i].checked=true
-                                    }
-                                
-                            };
-                    };
-        };*/
 
-        function checkAll(){
-             var s=document.getElementsByTagName('input');
-            var div=document.getElementById("divcheck");
-            var checkbox=div.getElementsByTagName("input");
-            for(i=0;i<checkbox.length;i++){
-                checkbox[i].checked=true;
-            };
-        }
-         function otherCheck(){
-             var s=document.getElementsByTagName('input');
-            var div=document.getElementById("divcheck");
-            var checkbox=div.getElementsByTagName("input");
-            for(i=0;i<checkbox.length;i++){
-                checkbox[i].checked=false;
-            };
-        }
-         function uncheck(){
-             var s=document.getElementsByTagName('input');
-            var div=document.getElementById("divcheck");
-            var checkbox=div.getElementsByTagName("input");
-            for(i=0;i<checkbox.length;i++){
-                if(checkbox[i].checked==true){
-                    checkbox[i].checked=false;
-                }
-                else{
-                    checkbox[i].checked=true
-                }
-            };
-        }
 
-        function batchDelSubmit(){
-            document.myform.submit();
-           
-        }
-        function changeCursor(){
-            document.getElementById("batchDel").style.cursor='pointer';
-           
-
-        }
-         function all(){
-            
-           alert(document.getElementsByTagName('input').length);
-        }
-    </script>
 </head>
 <body>
 

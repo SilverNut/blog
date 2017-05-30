@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-05-22 15:02:59
+/* Smarty version 3.1.30, created on 2017-05-25 19:36:52
   from "G:\DeskWoo\Documents\website\phpClassic\blog\App\Home\View\User\login_register_modal.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59228d23cc7eb7_85519931',
+    'unifunc' => 'content_5926c1d4cf7ed2_24706332',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4f45547eee4b3b4b2195085bc6f813715c415e7c' => 
     array (
       0 => 'G:\\DeskWoo\\Documents\\website\\phpClassic\\blog\\App\\Home\\View\\User\\login_register_modal.html',
-      1 => 1495436575,
+        1 => 1495712209,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59228d23cc7eb7_85519931 (Smarty_Internal_Template $_smarty_tpl) {
+    function content_5926c1d4cf7ed2_24706332(Smarty_Internal_Template $_smarty_tpl)
+    {
 ?>
 <!doctype html>
 <html lang="en">
@@ -29,30 +30,26 @@ function content_59228d23cc7eb7_85519931 (Smarty_Internal_Template $_smarty_tpl)
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<style>body{padding-top: 60px;}</style>
-	
-    <link href="<?php echo @constant('PUBLIC_PATH');?>
-bootstrap3/css/bootstrap.css" rel="stylesheet" />
- 
-	<link href="<?php echo @constant('CSS_URL');?>
-login-register.css" rel="stylesheet" />
+
+    <link href="/Public/bootstrap3/css/bootstrap.css" rel="stylesheet"/>
+
+    <link href="/Public/Home/User/css/login-register.css" rel="stylesheet"/>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 	
 	<?php echo '<script'; ?>
- src="<?php echo @constant('JQ_URL');?>
-jquery/jquery-1.10.2.js" type="text/javascript"><?php echo '</script'; ?>
+    src="/Public/Home/User/jquery/jquery-1.10.2.js" type="text/javascript"><?php echo '</script'; ?>
 >
 	<?php echo '<script'; ?>
- src="<?php echo @constant('PUBLIC_PATH');?>
-bootstrap3/js/bootstrap.js" type="text/javascript"><?php echo '</script'; ?>
+    src="/Public/bootstrap3/js/bootstrap.js" type="text/javascript"><?php echo '</script'; ?>
 >
 	<?php echo '<script'; ?>
- src="login-register.js" type="text/javascript"><?php echo '</script'; ?>
+    src="/Public/Home/User/js/login-register.js" type="text/javascript"><?php echo '</script'; ?>
 >
 
 </head>
 <body>
-    <div class="container">
-        <div class="row">
+<div class="container" style="border: 1px solid red">
+    <div class="row" style="border: 1px solid green">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
                  <a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a>

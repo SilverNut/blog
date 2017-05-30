@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-05-23 22:31:22
+/* Smarty version 3.1.30, created on 2017-05-25 00:29:56
   from "G:\DeskWoo\Documents\website\phpClassic\blog\App\Back\View\Cate\cateList.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_592447baf0c460_12296379',
+    'unifunc' => 'content_5925b504d46218_38098708',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ade215e639929ab539727a9741872237687b062' => 
     array (
       0 => 'G:\\DeskWoo\\Documents\\website\\phpClassic\\blog\\App\\Back\\View\\Cate\\cateList.html',
-      1 => 1495549877,
+        1 => 1495643394,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../Public/left.html' => 1,
   ),
 ),false)) {
-function content_592447baf0c460_12296379 (Smarty_Internal_Template $_smarty_tpl) {
+    function content_5925b504d46218_38098708(Smarty_Internal_Template $_smarty_tpl)
+    {
 ?>
 
 <!doctype html>
@@ -52,82 +53,8 @@ function content_592447baf0c460_12296379 (Smarty_Internal_Template $_smarty_tpl)
         }
     <?php echo '</script'; ?>
 >
-    <?php echo '<script'; ?>
- type="text/javascript">
-        /* window.onload=function(){
-                var CheckAll=document.getElementById('input_All');
-                var UnCheck=document.getElementById('input_uncheck');
-                var OtherCheck=document.getElementById('input_othercheck');
-                var div=document.getElementById('result-content');
-                var    CheckBox=div.getElementsByTagName('input');
-                CheckAll.onclick=function(){
-                        for(i=0;i<CheckBox.length;i++){
-                                CheckBox[i].checked=true;
-                            };
-                    };
-                UnCheck.onclick=function(){
-                        for(i=0;i<CheckBox.length;i++){
-                                CheckBox[i].checked=false;
-                            };
-                    };
-                Othercheck.onclick=function(){
-                        for(i=0;i<CheckBox.length;i++){
-                                if(CheckBox[i].checked==true){
-                                        CheckBox[i].checked=false;
-                                    }
-                                else{
-                                    CheckBox[i].checked=true
-                                    }
-                                
-                            };
-                    };
-        };*/
 
-        function checkAll(){
-             var s=document.getElementsByTagName('input');
-            var div=document.getElementById("divcheck");
-            var checkbox=div.getElementsByTagName("input");
-            for(i=0;i<checkbox.length;i++){
-                checkbox[i].checked=true;
-            };
-        }
-         function otherCheck(){
-             var s=document.getElementsByTagName('input');
-            var div=document.getElementById("divcheck");
-            var checkbox=div.getElementsByTagName("input");
-            for(i=0;i<checkbox.length;i++){
-                checkbox[i].checked=false;
-            };
-        }
-         function uncheck(){
-             var s=document.getElementsByTagName('input');
-            var div=document.getElementById("divcheck");
-            var checkbox=div.getElementsByTagName("input");
-            for(i=0;i<checkbox.length;i++){
-                if(checkbox[i].checked==true){
-                                        checkbox[i].checked=false;
-                                    }
-                                else{
-                                    checkbox[i].checked=true
-                                    }
-            };
-        }
 
-        function batchDelSubmit(){
-            document.myform.submit();
-           
-        }
-        function changeCursor(){
-            document.getElementById("batchDel").style.cursor='pointer';
-           
-
-        }
-         function all(){
-            
-           alert(document.getElementsByTagName('input').length);
-        }
-    <?php echo '</script'; ?>
->
 </head>
 <body>
 

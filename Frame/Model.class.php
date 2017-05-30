@@ -12,26 +12,28 @@
  */
 
 class Model{
-	public $dao;
-	protected $table='user';
+	protected $dao;
+
+	//protected $table='user';
 
 
-	public function __construct(){
+	protected function __construct()
+	{
 		$this->dao =DAO::getInstance();
 
 		global $config;
 		define('PREFIX',$config[$config['type']]['prefix']);
 	}
 
-	protected function getTableName(){
-		return PREFIX.$this->table;
-	}
+//	protected function getTableName(){
+//		return PREFIX.$this->table;
+//	}
 
-	protected function getAll(){
-		$prefix=PREFIX;
-		$sql="select * from {$prefix}{$this->table}";
-		return $this->dao->fetchAll($sql);
-	}
+//	protected function getAll(){
+//		$prefix=PREFIX;
+//		$sql="select * from {$prefix}{$this->table}";
+//		return $this->dao->fetchAll($sql);
+//	}
 	
 }     
                

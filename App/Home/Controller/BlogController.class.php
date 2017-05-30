@@ -11,7 +11,8 @@
  +----------------------------------------------------------------------
  */
 class BlogController{
-	public function name(){
+	public function showlist()
+	{
 		
 	}
 }     
