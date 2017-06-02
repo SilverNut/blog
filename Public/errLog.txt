@@ -1,0 +1,26 @@
+
+获取首页分类列表失败:
+--*--DAO:      SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog51.bg__cate1' doesn't exist
+--*--location: IndexModel::categoryList  line:18
+--*--2017-05-31 16:54:29
+
+获取首页分类列表失败:
+--*--DAO:      SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog51.bg__cate1' doesn't exist
+--*--location: IndexModel::categoryList  line:18
+--*--2017-05-31 16:56:19
+
+获取首页分类列表失败:
+--*--DAO:      SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog51.bg__cate' doesn't exist
+--*--location: IndexModel::categoryList  line:18
+--*--2017-05-31 17:05:22
+
+获取首页分类列表失败:
+--*--DAO:      SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog51.bg__cate' doesn't exist
+--*--location: IndexModel::categoryList  line:18
+--*--2017-05-31 17:05:32
+
+图片上传失败
+--*--DAO:      
+--*--location: BlogModel::upload_blog_cover line: 142
+--*--2017-06-01 16:04:49
+

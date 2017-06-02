@@ -4,22 +4,13 @@
         <li class="list-group-item">
             <strong>Main Categories</strong>
         </li>
+        <{foreach $categoryList as $k=>$v}>
         <li class="list-group-item">
-            <span class="badge">104</span>
-            Technology
+            <span class="badge"><{$v.cate_description}></span>
+            <a href=""><{$v.cate_name}></a>
         </li>
-        <li class="list-group-item">
-            <span class="badge">34</span>
-            Blogging
-        </li>
-        <li class="list-group-item">
-            <span class="badge">10</span>
-            Information
-        </li>
-        <li class="list-group-item">
-            <span class="badge">50</span>
-            Security
-        </li>
+        <{/foreach}>
+
         <li class="list-group-item">
             <strong>Other Categories</strong>
         </li>

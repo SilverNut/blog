@@ -19,10 +19,7 @@ class UserController extends HomeController{
         $this->userModel = new UserModel();
 	}
 
-    public function loginCookie()
-    {
-        echo 1;
-    }
+
 
     public function loginCheck()
     {

@@ -1,0 +1,13 @@
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'wer' in 'where clause'---2017-05-28 17:14:47
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'werr' in 'where clause'---2017-05-28 17:14:48
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'werrr' in 'where clause'---2017-05-28 17:14:48
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'wdw' in 'where clause'---2017-05-28 17:17:04
+
+
+---*here*---2017-05-31 14:41:18
+---*here*---2017-05-31 14:41:47
+---*here*---2017-05-31 14:42:52
+---*here*---2017-05-31 14:44:12
+---*here*---2017-05-31 14:46:33
+---**---2017-05-31 14:46:33
+---*here*---2017-05-31 14:48:55

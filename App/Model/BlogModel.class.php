@@ -57,6 +57,8 @@ class BlogModel extends Model
     public function insertBlogText($data)
     {
         $blog_title = $data['blog_title'];
+        $blog_brief = $data['blog_brief'];
+        $blog_cover = $data['blog_cover'];
         $blog_content = $data['blog_content'];
         $author_id = $data['author_id'];
         $cate_id = $data['cate_id'];
@@ -65,7 +67,7 @@ class BlogModel extends Model
         $hits = $data['hits'];
         $is_show = $data['is_show'];
         $is_del = $data['is_del'];
-        $sql = "insert into {$this->table} values(null,'$blog_title','$blog_content','$author_id','$cate_id','$add_time','$upd_time','$hits','$is_show','$is_del')";
+        $sql = "insert into {$this->table} values(null,'$blog_title','$blog_brief','$blog_cover','$blog_content','$author_id','$cate_id','$add_time','$upd_time','$hits','$is_show','$is_del')";
         return $this->dao->db_exec($sql);
 
     }
@@ -80,11 +82,28 @@ class BlogModel extends Model
     {
         $blog_id = $data['blog_id'];
         $blog_title = $data['blog_title'];
+        $blog_brief= $data['blog_brief'];
+
+        if(!empty($data['blog_cover'])){
+            if($_FILES['blog_cover']['error']==0){
+                $blog_cover=$this->upload_blog_cover();
+                if($blog_cover) unlink(BLOG_COVER.$data['blog_cover']);//图片上传成功后,删除原图
+            }else{
+                $blog_cover=$data['blog_cover'];//原来有图片,不修改
+            }
+        }else{
+            if($_FILES['blog_cover']['error']==0){
+                $blog_cover=$this->upload_blog_cover();//原来没有图片,直接上传
+            }else{
+                $blog_cover=$data['blog_cover'];//原来没有图片,不上传
+            }
+        }
+
         $blog_content = $data['blog_content'];
         $cate_id = $data['cate_id'];
         $upd_time = $data['upd_time'];
 
-        $sql = "update {$this->table} set blog_title='$blog_title',blog_content='$blog_content',cate_id='$cate_id',upd_time='$upd_time' where blog_id= $blog_id";
+        $sql = "update {$this->table} set blog_title='$blog_title',blog_brief='$blog_brief',blog_cover='$blog_cover',blog_content='$blog_content',cate_id='$cate_id',upd_time='$upd_time' where blog_id= $blog_id";
         return $this->dao->db_exec($sql);
     }
 
@@ -101,5 +120,33 @@ class BlogModel extends Model
         $sql = "update {$this->table} set is_del='1' where blog_id in ($arrStr_blogId)";
         return $this->dao->db_exec($sql);
     }
+
+    public function upload_blog_cover(){
+        //参数准备
+       // var_dump($_FILES['blog_cover']);
+
+
+        if($_FILES['blog_cover']['error']==0){
+            $file=$_FILES['blog_cover'];
+        }
+        $allow =array('image/jpg','image/png','image/bmp','image/gif','image/jpeg');
+        $path ='./Public/uploads/blog_cover';
+        $maxsize = 1024*1024*2;
+
+        $upCover=new Upload();
+        $res=$upCover->uploadFile($file,$allow,$error,$path,$maxsize);
+        if($res){
+            //upload success
+            return $res;
+        }else{
+            $this->wErrLog(__METHOD__.' line: '.__LINE__,'图片上传失败');
+            return false;
+        }
+    }
+
+
+
+
+
 
 }

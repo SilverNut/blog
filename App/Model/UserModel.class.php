@@ -41,7 +41,12 @@ class UserModel extends Model
     {
         $sql = "select * from {$this->table} where user_name='$username'";
         $res = $this->dao->fetchRow($sql);//var_dump($res);
-        if ($res == false) $this->dao->writeDaoErr($res);
+        return $res;
+    }
+
+    public function userIdInfo($userId){
+        $sql="select * from {$this->table} WHERE user_id='$userId' ";
+        $res = $this->dao->fetchRow($sql);//var_dump($res);
         return $res;
     }
 

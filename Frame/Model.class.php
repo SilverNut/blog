@@ -22,9 +22,13 @@ class Model{
 		$this->dao =DAO::getInstance();
 
 		global $config;
-		define('PREFIX',$config[$config['type']]['prefix']);
+		@define('PREFIX',$config[$config['type']]['prefix']);
 	}
 
+	public function wErrLog($location,$msg=''){
+		$err= "$msg\n"."--*--DAO:      " .DAO::$error."\n--*--location: $location\n--*--". date("Y-m-d H:i:s") . "\n\n";
+		file_put_contents('./Public/errLog.txt',$err, FILE_APPEND);
+	}
 //	protected function getTableName(){
 //		return PREFIX.$this->table;
 //	}

@@ -35,7 +35,7 @@
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form action="?p=back&c=Blog&a=Add" method="post" id="myform">
+                <form action="?p=back&c=Blog&a=Add" method="post" id="myform" enctype="multipart/form-data">
                     <table class="insert-tab" width="100%">
                         <tbody>
                             <tr>
@@ -53,6 +53,20 @@
                                 <th><i class="require-red">*</i>标题：</th>
                                 <td>
                                     <input class="common-text required" name="blog_title" size="50" value="" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>简述:</th>
+                                <td>
+                                    <textarea class=" required" name="blog_brief" rows="5" cols="50" ></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>图片：</th>
+                                <td>
+                                    <input type="text" size="20" name="upfile" id="upfile" style="border:1px dotted #ccc">
+                                    <input class='btn' type="button" value="浏览" onclick="path.click()" style="border:1px solid #ccc;">
+                                    <input type="file" name="blog_cover" id="path" style="display:none" onchange="upfile.value=this.value">
                                 </td>
                             </tr>
                             <tr>

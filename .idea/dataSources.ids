@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - blog51@localhost" uuid="85a631cd-07d0-463c-ba87-01be85e62854">
+    <database-info product="MySQL" version="5.7.14" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
+      <schema id="1" name="blog51"/>
+      <table id="2" parent="1" name="bg_blog">
+        <comment>博文表</comment>
+      </table>
+      <table id="3" parent="1" name="bg_cate">
+        <comment>分类表</comment>
+      </table>
+      <table id="4" parent="1" name="bg_user">
+        <comment>会员表</comment>
+      </table>
+      <column id="5" parent="2" name="blog_id">
+        <comment>主键</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="6" parent="2" name="blog_title">
+        <comment>博文的标题</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="7" parent="2" name="blog_brief">
+        <data-type>text</data-type>
+      </column>
+      <column id="8" parent="2" name="blog_cover">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="9" parent="2" name="blog_content">
+        <comment>博文内容</comment>
+        <data-type>text</data-type>
+      </column>
+      <column id="10" parent="2" name="author_id">
+        <comment>作者id</comment>
+        <mandatory>1</mandatory>
+        <data-type>smallint(5) unsigned</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="11" parent="2" name="cate_id">
+        <comment>分类id</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(3) unsigned</data-type>
+      </column>
+      <column id="12" parent="2" name="add_time">
+        <comment>博文添加时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="13" parent="2" name="upd_time">
+        <comment>博文修改时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="14" parent="2" name="hits">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="15" parent="2" name="is_show">
+        <comment>0:显示 1:不显示</comment>
+        <mandatory>1</mandatory>
+        <data-type>enum(&apos;0&apos;, &apos;1&apos;)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="16" parent="2" name="is_del">
+        <comment>0:正常 1:删除</comment>
+        <mandatory>1</mandatory>
+        <data-type>enum(&apos;0&apos;, &apos;1&apos;)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="17" parent="2" name="PRIMARY">
+        <columns>blog_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="18" parent="3" name="cate_id">
+        <comment>主键</comment>
+        <mandatory>1</mandatory>
+        <data-type>tinyint(3) unsigned</data-type>
+      </column>
+      <column id="19" parent="3" name="cate_name">
+        <comment>分类名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="20" parent="3" name="cate_description">
+        <comment>分类描述</comment>
+        <data-type>text</data-type>
+      </column>
+      <column id="21" parent="3" name="is_show">
+        <comment>0:显示 1:不显示</comment>
+        <mandatory>1</mandatory>
+        <data-type>enum(&apos;0&apos;, &apos;1&apos;)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="22" parent="3" name="PRIMARY">
+        <columns>cate_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="23" parent="4" name="user_id">
+        <comment>主键</comment>
+        <mandatory>1</mandatory>
+        <data-type>smallint(5) unsigned</data-type>
+      </column>
+      <column id="24" parent="4" name="user_name">
+        <comment>会员名称</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="25" parent="4" name="user_pwd">
+        <comment>密码</comment>
+        <mandatory>1</mandatory>
+        <data-type>char(32)</data-type>
+      </column>
+      <column id="26" parent="4" name="user_email">
+        <comment>邮箱地址</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="27" parent="4" name="user_tel">
+        <comment>手机号码</comment>
+        <mandatory>1</mandatory>
+        <data-type>char(11)</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="28" parent="4" name="user_sex">
+        <comment>0:男  1:女  2:保密</comment>
+        <mandatory>1</mandatory>
+        <data-type>enum(&apos;0&apos;, &apos;1&apos;, &apos;2&apos;)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="29" parent="4" name="add_time">
+        <comment>注册时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="30" parent="4" name="login_time">
+        <comment>最近登录时间</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="31" parent="4" name="PRIMARY">
+        <columns>user_id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

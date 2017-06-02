@@ -15,7 +15,7 @@ class BaseController{
 
 	public function __construct(){
 
-
+		define('BLOG_COVER', './Public/uploads/blog_cover/');
 		$this->view=new Smarty();
 		//var_dump($this->view);
 
@@ -35,6 +35,11 @@ class BaseController{
 
 	}
 
+
+	public function writeErr($msg = '')
+	{
+		file_put_contents('./daoErr.txt', DAO::$error . "---*$msg*---" . date("Y-m-d H:i:s") . "\n", FILE_APPEND);
+	}
 	//receive data deal for security
 	public function rceDataDel($data, $dft = null)
 	{

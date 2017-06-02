@@ -2,11 +2,12 @@
     <div class="col-sm-10"></div>
     <{if !empty($smarty.session.userInfo)}>
     <div class="col-sm-2 text-right">
+        <span><a href="?p=home">首页</a></span>
         <span>welcome!&nbsp;</span>
         <span><{$smarty.session.userInfo.user_name}></span>
         <span><a href="?c=user&a=user_logout">注销</a></span>
         <{if $smarty.session.userInfo.user_name eq 'wdw'}>
-        <span><a href="?p=back">进入后台</a></span>
+        <span><a href="?p=back">后台</a></span>
         <{/if}>
     </div>
     <{else}>
